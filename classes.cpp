@@ -3,8 +3,11 @@
 
 int main() {
 
-    // Julkinen ja staattinen esimerkkimuuttuja
+    // Julkinen ja staattinen muuttuja
     static std::string nimi;
+
+    // Julkinen arvosanamuuttuja
+    int arvosana;
 
     // Aloitetaan alkuluokan määrittely
     class Henkilö {
@@ -15,8 +18,7 @@ int main() {
                 nimi = ParameterName;
             }
 
-        // Julkinen arvosanamuuttuja
-        int arvosana;
+
 
         // Arvosanafunktio
         void asetaArvosana(int uusiArvosana) {
