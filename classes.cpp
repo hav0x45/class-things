@@ -3,12 +3,12 @@
 
 int main() {
 
-    // Julkinen ja staattinen muuttuja
+    // Julkinen ja staattinen esimerkkimuuttuja
     static std::string nimi;
 
     // Julkinen arvosanamuuttuja
-    int arvosana;
-
+    static int arvosana;
+    
     // Aloitetaan alkuluokan määrittely
     class Henkilö {
     
@@ -18,15 +18,13 @@ int main() {
                 nimi = ParameterName;
             }
 
-
-
         // Arvosanafunktio
-        void asetaArvosana(int uusiArvosana) {
+        static void asetaArvosana(int uusiArvosana) {
             arvosana = uusiArvosana;
         }
         
         // Arvosanan hakufunktio
-        int haeArvosana() {
+        static int haeArvosana() {
             return arvosana;
         }
     
@@ -40,8 +38,14 @@ int main() {
     // Aseta arvon nimi
     Henkilö::asetaNimi("Teemu");
 
-    // Haetaan titteli
-    std::cout << Henkilö::haeTitteli();
+    // Haetaan ja tulostetaan titteli
+    std::cout << Henkilö::haeTitteli() << std::endl;
+
+    // Aseta arvosana
+    Henkilö::asetaArvosana(5);
+
+    // Tulostetaan arvosana
+    std::cout << "Arvosana: " << Henkilö::haeArvosana();
 
     return 0;
 }
